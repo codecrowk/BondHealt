@@ -1,0 +1,6 @@
+@BondHealth_HostAddress = http://localhost:5159
+
+GET {{BondHealth_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
