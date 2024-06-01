@@ -9,8 +9,8 @@ cd $rootBashDir
 
 ##----- GLOBAL VARIBLES -----##
 declare projectName="BondHealth"
-declare modelName="Especialidad"
-declare globalModelNaming=${modelName}es
+declare modelName="Patient"
+declare globalModelNaming=${modelName}s
 
 declare rootProjectDir="${rootDir}/${projectName}"
 
@@ -25,11 +25,6 @@ declare rootProjectDir="${rootDir}/${projectName}"
 export rootProjectDir
 export globalModelNaming
 export modelName
-##----- Testing
-# cd $projectName/Data
-# echo $rootProjectDir
-# pwd
-
 
 ##----- START -----##
 ##---- Project Skeleton
@@ -38,6 +33,11 @@ export modelName
 ##--- BaseContext
 ./Data/BaseContext.sh
 
+##--- Http methods
+./Services/HttpMethods/IHttpGet.sh
+./Services/HttpMethods/IHttpPost.sh
+./Services/HttpMethods/IHttpPut.sh
+./Services/HttpMethods/IHttpDelete.sh
 
 ##--- Controllers
 ./Controllers/GetController.sh
@@ -47,12 +47,6 @@ export modelName
 
 ##--- Model
 ./Models/Model.sh
-
-##--- Http methods
-./Services/HttpMethods/IHttpGet.sh
-./Services/HttpMethods/IHttpPost.sh
-./Services/HttpMethods/IHttpPut.sh
-./Services/HttpMethods/IHttpDelete.sh
 
 ##--- REPOSITORY ---##
 #-- Methods

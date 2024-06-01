@@ -3,10 +3,10 @@ cd $rootProjectDir/Services/${globalModelNaming}Repository/Methods
 cat > ${globalModelNaming}Update.cs << EOM
 namespace "\$project_name".Services."\$repository_name".Methods
 {
-  public class "\$model_name"sUpdate: IHttpPut<"\$model_name">
+  public class "\$globalModelNaming"Update: IHttpPut<"\$model_name">
   {
     private readonly "\$db_context_name" _"\$db_context_field";
-    public "\$model_name"sUpdate("\$db_context_name" "\$db_context_field"){
+    public "\$globalModelNaming"Update("\$db_context_name" "\$db_context_field"){
       _"\$db_context_field" = "\$db_context_field";
     }
 

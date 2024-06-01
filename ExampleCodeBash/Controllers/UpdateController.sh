@@ -1,14 +1,18 @@
 cd "$rootProjectDir/Controllers/${globalModelNaming}"
 
 cat > ${globalModelNaming}UpdateController.cs << EOM
+using BondHealth.Models;
+using BondHealth.Services.DoctorsRepository;
+using Microsoft.AspNetCore.Mvc;
+
 namespace "\$project_name".Controllers
 {
   [Route("\$api_endpoint_name")]
   [ApiController]
-  public class "\$update_controller_name": ControllerBase
+  public class "\$globalModelNaming"UpdateController: ControllerBase
   {
     private readonly "\$repository_interface_name" _"\$repository_filed";
-    public "\$update_controller_name"("\$repository_interface_name" "\$repository_filed")
+    public "\$globalModelNaming"UpdateController("\$repository_interface_name" "\$repository_filed")
     {
       _"\$repository_filed" = "\$repository_filed";
     }
