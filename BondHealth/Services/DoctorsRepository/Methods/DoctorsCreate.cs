@@ -1,17 +1,21 @@
-namespace "$project_name".Services."$repository_name".Methods
+using BondHealth.Data;
+using BondHealth.Models;
+using BondHealth.Services.HttpMethods;
+
+namespace BondHealth.Services.DoctorsRepository.Methods
 {
-  public class "$model_name"sCreate: IHttpPost<"$model_name">
+  public class DoctorsCreate: IHttpPost<Doctor>
   {
-    private readonly "$db_context_name" _"$db_context_field";
-    public "$model_name"sCreate("$db_context_name" "$db_context_field"){
-      _"$db_context_field" = "$db_context_field";
+    private readonly BaseContext _context;
+    public DoctorsCreate(BaseContext baseContext){
+      _context = baseContext;
     }
 
-    public "$http_post_return" Create("$model_name" "$model_name_argument")
+    public Doctor Create(Doctor doctor)
     {
-      _context."$model_name"s.Add("$model_name_argument");
+      _context.Doctors.Add(doctor);
       _context.SaveChanges();
-      return  "$model_name_argument";
+      return  doctor;
     }
   } 
 }

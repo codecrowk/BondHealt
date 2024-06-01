@@ -1,12 +1,17 @@
-namespace "$project_name".Data
+using BondHealth.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace BondHealth.Data
 {
-  public class "$db_context_name": DbContext
+  public class BaseContext: DbContext
   {
-    public "$db_context_name"(DbContextOptions<"$db_context_name"> options): base(options)
+    public BaseContext(DbContextOptions<BaseContext> options): base(options)
     { }
 
     // Remember that model is singular, and table is plural
     // DbSet<Model> SqlTable
-    public DbSet<"$model_name"> "$model_name"s {get; set;}
+    public DbSet<Doctor> Doctors {get; set;}
+    public DbSet<Patient> Patients {get; set;}
+
   }
 }

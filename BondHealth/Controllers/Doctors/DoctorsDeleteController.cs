@@ -1,19 +1,22 @@
-namespace "$project_name".Controllers
+using BondHealth.Services.DoctorsRepository;
+using Microsoft.AspNetCore.Mvc;
+
+namespace BondHealth.Controllers
 {
-  [Route("$api_endpoint_name")]
+  [Route("api/doctors")]
   [ApiController]
-  public class "$delete_controller_name": ControllerBase
+  public class DoctorsDeleteController: ControllerBase
   {
-    private readonly "$repository_interface_name" _"$repository_filed";
-    public "$delete_controller_name"("$repository_interface_name" "$repository_filed")
+    private readonly IDoctorsRepository _doctorsRepository;
+    public DoctorsDeleteController(IDoctorsRepository doctorsRepository)
     {
-      _"$repository_filed" = "$repository_filed";
+      _doctorsRepository = doctorsRepository;
     }
 
     [HttpDelete("{Id}")]
-    public "$http_delete_return" Delete(int Id)
+    public int Delete(int Id)
     {
-      return _"$repository_filed".Delete(Id);
+      return _doctorsRepository.Delete(Id);
     }
   }
 }

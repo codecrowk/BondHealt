@@ -14,7 +14,7 @@ namespace "\$project_name".Data
 
     // Remember that model is singular, and table is plural
     // DbSet<Model> SqlTable
-    public DbSet<"\$model_name"> "\$globalModelNaming" {get; set;}
+    public DbSet<"\$model_name"> "\$global_model_naming" {get; set;}
   }
 }
 EOM

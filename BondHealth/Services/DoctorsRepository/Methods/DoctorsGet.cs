@@ -1,20 +1,24 @@
-namespace "$project_name".Services."$repository_name".Methods
+using BondHealth.Data;
+using BondHealth.Models;
+using BondHealth.Services.HttpMethods;
+
+namespace BondHealth.Services.DoctorsRepository.Methods
 {
-  public class "$model_name"sGet: IHttpGet<"$model_name">
+  public class DoctorsGet: IHttpGet<Doctor>
   {
-    private readonly "$db_context_name" _"$db_context_field";
-    public "$model_name"sGet("$db_context_name" "$db_context_field"){
-      _"$db_context_field" = "$db_context_field";
+    private readonly BaseContext _context;
+    public DoctorsGet(BaseContext baseContext){
+      _context = baseContext;
     }
         
-    public "$http_getAll_return" GetAll()
+    public IEnumerable<Doctor> GetAll()
     {
-      return _"$db_context_field"."$model_name"s.ToList();
+      return _context.Doctors.ToList();
     }
 
-    public "$http_getById_return" GetById(int id)
+    public Doctor GetById(int id)
     {
-      return _"$db_context_field"."$model_name"s.Find(id);
+      return _context.Doctors.Find(id);
     }
   } 
 }

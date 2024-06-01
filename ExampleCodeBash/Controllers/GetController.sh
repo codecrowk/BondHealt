@@ -1,8 +1,8 @@
 cd "$rootProjectDir/Controllers/${globalModelNaming}"
 
 cat > ${globalModelNaming}Controller.cs << EOM
-using BondHealth.Models;
-using BondHealth.Services.DoctorsRepository;
+using "\$project_name".Models;
+using "\$project_name".Services.I"\$global_model_naming"Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace "\$project_name".Controllers
@@ -11,10 +11,10 @@ namespace "\$project_name".Controllers
   [ApiController]
   // Remember that in works in onion (this is level 1, repository is level 2), so
   // others classes, don't know about this one
-  public class "globalModelNaming"Controller: ControllerBase
+  public class "\$global_model_naming"Controller: ControllerBase
   {
-    private readonly "\$repository_interface_name" _"\$repository_filed";
-    public "\$globalModelNaming"Controller("\$repository_interface_name" "\$repository_filed")
+    private readonly I"\$global_model_naming"Repository _"\$repository_filed";
+    public "\$global_model_naming"Controller(I"\$global_model_naming"Repository "\$repository_filed")
     {
       _"\$repository_filed" = "\$repository_filed";
     }

@@ -1,9 +1,12 @@
-namespace "$project_name".Services."$repository_name"
+using BondHealth.Models;
+using BondHealth.Services.HttpMethods;
+
+namespace BondHealth.Services.DoctorsRepository
 {
   // We have to create the following methods
-  public interface "$repository_interface_name": IHttpGet<"$model_name">, 
-    IHttpPost<"$model_name">, 
-    IHttpPut<"$model_name">, 
-    IHttpDelete<"$model_name">
+  public interface IDoctorsRepository: IHttpGet<Doctor>, 
+    IHttpPost<Doctor>, 
+    IHttpPut<Doctor>, 
+    IHttpDelete<Doctor>
   { }
 }

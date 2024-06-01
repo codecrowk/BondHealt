@@ -1,8 +1,8 @@
-namespace "$project_name".Services.HttpMethods
+namespace BondHealth.Services.HttpMethods
 {
   public interface IHttpDelete<T>
   {
     // int
-    "$http_delete_return_local" Delete("$http_delete_param_type_local" "$http_delete_param_local"); 
+    int Delete(int id); 
   }
 }

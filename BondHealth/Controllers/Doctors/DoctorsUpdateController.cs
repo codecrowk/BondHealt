@@ -1,19 +1,23 @@
-namespace "$project_name".Controllers
+using BondHealth.Models;
+using BondHealth.Services.DoctorsRepository;
+using Microsoft.AspNetCore.Mvc;
+
+namespace BondHealth.Controllers
 {
-  [Route("$api_endpoint_name")]
+  [Route("api/doctors")]
   [ApiController]
-  public class "$update_controller_name": ControllerBase
+  public class DoctorsUpdateController: ControllerBase
   {
-    private readonly "$repository_interface_name" _"$repository_filed";
-    public "$update_controller_name"("$repository_interface_name" "$repository_filed")
+    private readonly IDoctorsRepository _doctorsRepository;
+    public DoctorsUpdateController(IDoctorsRepository doctorsRepository)
     {
-      _"$repository_filed" = "$repository_filed";
+      _doctorsRepository = doctorsRepository;
     }
 
     [HttpPut]
-    public "$http_put_return" Update("$model_name" "$model_name_argument")
+    public Doctor Update(Doctor doctor)
     {
-      return _"$repository_filed".Update("$model_name_argument");
+      return _doctorsRepository.Update(doctor);
     }
   }
 }

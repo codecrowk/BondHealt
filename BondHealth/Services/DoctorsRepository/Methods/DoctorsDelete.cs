@@ -1,16 +1,20 @@
-namespace "$project_name".Services."$repository_name".Methods
+using BondHealth.Data;
+using BondHealth.Models;
+using BondHealth.Services.HttpMethods;
+
+namespace BondHealth.Services.DoctorsRepository.Methods
 {
-  public class "$model_name"sDelete: IHttpDelete<"$model_name">
+  public class DoctorsDelete: IHttpDelete<Doctor>
   {
-    private readonly "$db_context_name" _"$db_context_field";
-    public "$model_name"sDelete("$db_context_name" "$db_context_field"){
-      _"$db_context_field" = "$db_context_field";
+    private readonly BaseContext _context;
+    public DoctorsDelete(BaseContext baseContext){
+      _context = baseContext;
     }
 
-    public "$http_delete_return" Delete(int id)
+    public int Delete(int id)
     {
-      var dataEntry = _context."$model_name"s.Find(id);
-      _context."$model_name"s.Remove(dataEntry);
+      var dataEntry = _context.Doctors.Find(id);
+      _context.Doctors.Remove(dataEntry);
       _context.SaveChanges();
       return dataEntry.Id;
     }

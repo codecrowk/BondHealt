@@ -1,17 +1,22 @@
-namespace "$project_name".Services."$repository_name".Methods
+using BondHealth.Data;
+using BondHealth.Models;
+using BondHealth.Services.HttpMethods;
+using Microsoft.EntityFrameworkCore;
+
+namespace BondHealth.Services.DoctorsRepository.Methods
 {
-  public class "$model_name"sUpdate: IHttpPut<"$model_name">
+  public class DoctorsUpdate: IHttpPut<Doctor>
   {
-    private readonly "$db_context_name" _"$db_context_field";
-    public "$model_name"sUpdate("$db_context_name" "$db_context_field"){
-      _"$db_context_field" = "$db_context_field";
+    private readonly BaseContext _context;
+    public DoctorsUpdate(BaseContext baseContext){
+      _context = baseContext;
     }
 
-    public "$http_put_return" Update("$model_name" "$model_name_argument")
+    public Doctor Update(Doctor doctor)
     {
-      _context.Entry("$model_name_argument").State = EntityState.Modified;
+      _context.Entry(doctor).State = EntityState.Modified;
       _context.SaveChanges();
-      return "$model_name_argument";
+      return doctor;
     }
   } 
 }
