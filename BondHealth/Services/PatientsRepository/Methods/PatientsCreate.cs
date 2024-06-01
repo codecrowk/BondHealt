@@ -1,3 +1,7 @@
+using BondHealth.Data;
+using BondHealth.Models;
+using BondHealth.Services.HttpMethods;
+
 namespace BondHealth.Services.PatientsRepository.Methods
 {
   public class PatientsCreate: IHttpPost<Patient>

@@ -1,3 +1,7 @@
+using BondHealth.Data;
+using BondHealth.Services.DoctorsRepository;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,16 +9,26 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
+//----- PERSONAL SERVICES -----//
+
+// BaseContext: Intance of DbContext
+builder.Services.AddDbContext<BaseContext> ( options => 
+  options.UseMySql
+  (
+    // MySqlConnection: Alias use in appsettings.json to link mysql database
+    builder.Configuration.GetConnectionString("MySqlConnection"),
+
+    // 8.0.20-mysql: Version of Pomelo SQL
+    Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.20-mysql")
+  )
+);
+
+// Inyection of dependencies in Controllers
+builder.Services.AddScoped<IDoctorsRepository, DoctorsRepository>();
+
+//----- END PERSONAL SERVICES -----//
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
 app.UseHttpsRedirection();
 

@@ -1,3 +1,6 @@
+using BondHealth.Models;
+using BondHealth.Services.HttpMethods;
+
 namespace BondHealth.Services.PatientsRepository
 {
   // We have to create the following methods
