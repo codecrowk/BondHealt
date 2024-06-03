@@ -14,10 +14,10 @@ namespace BondHealth.Controllers
       _patientsRepository = patientsRepository;
     }
 
-    [HttpPut]
-    public Patient Update(Patient patient)
+    [HttpPut("{Id}")]
+    public Patient Update(int Id, Patient patient)
     {
-      return _patientsRepository.Update(patient);
+      return _patientsRepository.Update(Id, patient);
     }
   }
 }

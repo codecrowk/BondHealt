@@ -15,26 +15,26 @@ namespace BondHealth.Services.PatientsRepository
 
     public IEnumerable<Patient> GetAll()
     {
-      PatientsGet taskUnit = new PatientsGet(_context);
+      PatientsGet taskUnit = new(_context);
       return taskUnit.GetAll();
     }
 
     public Patient GetById(int id)
     {
-      PatientsGet taskUnit = new PatientsGet(_context);
+      PatientsGet taskUnit = new(_context);
       return taskUnit.GetById(id);
     }
 
     public Patient Create(Patient patient)
     {
-      PatientsCreate taskUnit = new PatientsCreate(_context);
+      PatientsCreate taskUnit = new(_context);
       return taskUnit.Create(patient);
     }
 
-    public Patient Update(Patient patient)
+    public Patient Update(int id, Patient patient)
     {
       PatientsUpdate taskUnit  = new(_context);
-      return taskUnit.Update(patient);
+      return taskUnit.Update(id, patient);
     }
 
     public int Delete(int id)

@@ -17,10 +17,10 @@ namespace "\$project_name".Controllers
       _"\$repository_filed" = "\$repository_filed";
     }
 
-    [HttpPut]
-    public "\$http_put_return" Update("\$model_name" "\$model_name_argument")
+    [HttpPut("{Id}")]
+    public "\$http_put_return" Update(int Id, "\$model_name" "\$model_name_argument")
     {
-      return _"\$repository_filed".Update("\$model_name_argument");
+      return _"\$repository_filed".Update(Id, "\$model_name_argument");
     }
   }
 }

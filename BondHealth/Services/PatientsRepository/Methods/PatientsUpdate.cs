@@ -12,8 +12,9 @@ namespace BondHealth.Services.PatientsRepository.Methods
       _context = context;
     }
 
-    public Patient Update(Patient patient)
+    public Patient Update(int id, Patient patient)
     {
+      patient.Id = id;
       _context.Entry(patient).State = EntityState.Modified;
       _context.SaveChanges();
       return patient;

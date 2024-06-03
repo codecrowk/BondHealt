@@ -14,26 +14,26 @@ namespace "\$project_name".Services."\$global_model_naming"Repository
 
     public "\$http_getAll_return" GetAll()
     {
-      "\$global_model_naming"Get taskUnit = new "\$global_model_naming"Get(_context);
+      "\$global_model_naming"Get taskUnit = new(_context);
       return taskUnit.GetAll();
     }
 
     public "\$http_getById_return" GetById(int id)
     {
-      "\$global_model_naming"Get taskUnit = new "\$global_model_naming"Get(_context);
+      "\$global_model_naming"Get taskUnit = new(_context);
       return taskUnit.GetById(id);
     }
 
     public "\$http_post_return" Create("\$model_name" "\$model_name_argument")
     {
-      "\$global_model_naming"Create taskUnit = new "\$global_model_naming"Create(_context);
+      "\$global_model_naming"Create taskUnit = new(_context);
       return taskUnit.Create("\$model_name_argument");
     }
 
-    public "\$http_put_return" Update("\$model_name" "\$model_name_argument")
+    public "\$http_put_return" Update(int id, "\$model_name" "\$model_name_argument")
     {
       "\$global_model_naming"Update taskUnit  = new(_context);
-      return taskUnit.Update("\$model_name_argument");
+      return taskUnit.Update(id, "\$model_name_argument");
     }
 
     public "\$http_delete_return" Delete(int id)

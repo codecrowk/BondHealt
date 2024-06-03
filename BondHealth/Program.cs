@@ -1,5 +1,6 @@
 using BondHealth.Data;
 using BondHealth.Services.DoctorsRepository;
+using BondHealth.Services.PatientsRepository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,6 +27,7 @@ builder.Services.AddDbContext<BaseContext> ( options =>
 
 // Inyection of dependencies in Controllers
 builder.Services.AddScoped<IDoctorsRepository, DoctorsRepository>();
+builder.Services.AddScoped<IPatientsRepository, PatientsRepository>();
 
 //----- END PERSONAL SERVICES -----//
 var app = builder.Build();

@@ -14,8 +14,9 @@ namespace "\$project_name".Services."\$global_model_naming"Repository.Methods
       _"\$db_context_field" = "\$db_context_field";
     }
 
-    public "\$http_put_return" Update("\$model_name" "\$model_name_argument")
+    public "\$http_put_return" Update(int id, "\$model_name" "\$model_name_argument")
     {
+      "\$model_name_argument".Id = id;
       _context.Entry("\$model_name_argument").State = EntityState.Modified;
       _context.SaveChanges();
       return "\$model_name_argument";

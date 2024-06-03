@@ -12,8 +12,9 @@ namespace BondHealth.Services.DoctorsRepository.Methods
       _context = baseContext;
     }
 
-    public Doctor Update(Doctor doctor)
+    public Doctor Update(int id, Doctor doctor)
     {
+      doctor.Id = id;
       _context.Entry(doctor).State = EntityState.Modified;
       _context.SaveChanges();
       return doctor;
