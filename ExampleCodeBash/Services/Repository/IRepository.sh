@@ -1,6 +1,9 @@
 cd $rootProjectDir/Services/${globalModelNaming}Repository
 
 cat > I${globalModelNaming}Repository.cs << EOM
+using "\$project_name".Models;
+using "\$project_name".Services.HttpMethods;
+
 namespace "\$project_name".Services."\$global_model_naming"Repository
 {
   // We have to create the following methods

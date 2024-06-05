@@ -1,8 +1,7 @@
 cd "$rootProjectDir/Controllers/${globalModelNaming}"
 
 cat > ${globalModelNaming}DeleteController.cs << EOM
-using "\$project_name".Models;
-using "\$project_name".Services.I"\$global_model_naming"Repository;
+using "\$project_name".Services."\$global_model_naming"Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace "\$project_name".Controllers

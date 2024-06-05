@@ -4,6 +4,8 @@ cat > ${globalModelNaming}Update.cs << EOM
 using "\$project_name".Data;
 using "\$project_name".Models;
 using "\$project_name".Services.HttpMethods;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace "\$project_name".Services."\$global_model_naming"Repository.Methods
 {

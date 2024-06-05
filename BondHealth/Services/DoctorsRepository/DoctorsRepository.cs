@@ -1,4 +1,5 @@
 using BondHealth.Data;
+using BondHealth.Helpers;
 using BondHealth.Models;
 using BondHealth.Services.DoctorsRepository.Methods;
 
@@ -13,13 +14,25 @@ namespace BondHealth.Services.DoctorsRepository
       _context = context;
     }
 
-    public IEnumerable<Doctor> GetAll()
+    // public IEnumerable<Doctor> GetAll()
+    // {
+    //   DoctorsGet taskUnit = new(_context);
+    //   return taskUnit.GetAll();
+    // }
+
+    public PageResponse<IEnumerable<Doctor>> GetAll(int pageNumber)
     {
       DoctorsGet taskUnit = new(_context);
-      return taskUnit.GetAll();
+      return taskUnit.GetAll(pageNumber);
     }
 
-    public Doctor GetById(int id)
+    // public Doctor GetById(int id)
+    // {
+    //   DoctorsGet taskUnit = new(_context);
+    //   return taskUnit.GetById(id);
+    // }
+
+    public Response<Doctor> GetById(int id)
     {
       DoctorsGet taskUnit = new(_context);
       return taskUnit.GetById(id);

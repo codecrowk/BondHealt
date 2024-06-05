@@ -1,3 +1,4 @@
+using BondHealth.Helpers;
 using BondHealth.Models;
 using BondHealth.Services.DoctorsRepository;
 using Microsoft.AspNetCore.Mvc;
@@ -17,13 +18,13 @@ namespace BondHealth.Controllers
     }
 
     [HttpGet]
-    public IEnumerable<Doctor> GetAll()
+    public PageResponse<IEnumerable<Doctor>> GetAll([FromQuery] int pageNumber)
     {
-      return _doctorsRepository.GetAll();
+      return _doctorsRepository.GetAll(pageNumber);
     }
 
     [HttpGet("{Id}")]
-    public Doctor GetById(int Id)
+    public Response<Doctor> GetById(int Id)
     {
       return _doctorsRepository.GetById(Id);
     }

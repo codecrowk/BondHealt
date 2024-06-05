@@ -2,7 +2,7 @@ cd "$rootProjectDir/Controllers/${globalModelNaming}"
 
 cat > ${globalModelNaming}CreateController.cs << EOM
 using "\$project_name".Models;
-using "\$project_name".Services.I"\$global_model_naming"Repository;
+using "\$project_name".Services."\$global_model_naming"Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace "\$project_name".Controllers
@@ -18,7 +18,7 @@ namespace "\$project_name".Controllers
     }
 
     [HttpPost]
-    public "\$http_post_return" Create([FromBody] "\$global_model_naming" "\$model_name_argument")
+    public "\$http_post_return" Create([FromBody] "\$model_name" "\$model_name_argument")
     {
       return _"\$repository_filed".Create("\$model_name_argument");
     }

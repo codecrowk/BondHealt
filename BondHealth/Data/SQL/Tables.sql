@@ -27,9 +27,9 @@ CREATE TABLE Doctors (
   FullName VARCHAR(125),
   Email VARCHAR(125) UNIQUE,
   Phone VARCHAR(75),
+  IdSpecialty INT,
   Status ENUM("active", "inactive") DEFAULT "active",
-  IdSpeciality INT,
-  Foreign Key (IdSpeciality) REFERENCES Specialties(Id)
+  Foreign Key (IdSpecialty) REFERENCES Specialties(Id)
 );
 
 -----## Specialties Table

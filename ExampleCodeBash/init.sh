@@ -9,8 +9,8 @@ cd $rootBashDir
 
 ##----- GLOBAL VARIBLES -----##
 declare projectName="BondHealth"
-declare modelName="Patient"
-declare globalModelNaming=${modelName}s
+declare modelName="Specialty"
+declare globalModelNaming="Specialties"
 
 declare rootProjectDir="${rootDir}/${projectName}"
 

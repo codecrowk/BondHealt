@@ -27,7 +27,7 @@ INSERT INTO Treatments (Name, Description) VALUES
 
 ----------### DOCTORS MAIN DATA ###---------- 
 -----## Doctors ##-----
-INSERT INTO Doctors (FullName, Email, Phone, IdSpeciality) VALUES
+INSERT INTO Doctors (FullName, Email, Phone, IdSpecialty) VALUES
 ('Dr. John Smith', 'john.smith@example.com', '+1234567890', 1),
 ('Dr. Emily Johnson', 'emily.johnson@example.com', '+1987654321', 2),
 ('Dr. Michael Williams', 'michael.williams@example.com', '+1122334455', 1),
