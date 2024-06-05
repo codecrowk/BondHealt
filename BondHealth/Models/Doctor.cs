@@ -8,10 +8,17 @@ namespace BondHealth.Models
     // A good part of models have ID
     [Key]
     public int Id {get; set;}
+
+    [Required]
     public string FullName {get; set;}
-    public string Email {get; set;}
+
+    // [Required]
+    public string? Email {get; set;}
     public string Phone {get; set;}
     public string Status {get; set;}
+
+    [Required]
+    [Range(1,100)]
     public int IdSpecialty {get; set;}
 
     [ForeignKey("IdSpecialty")]

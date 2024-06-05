@@ -41,7 +41,17 @@ namespace BondHealth.Services.DoctorsRepository
     public Doctor Create(Doctor doctor)
     {
       DoctorsCreate taskUnit = new(_context);
-      return taskUnit.Create(doctor);
+      try
+      {
+        taskUnit.Create(doctor);
+      }
+      catch (Exception e)
+      {
+        string error = e.Message;
+        Console.WriteLine(error);
+      }
+      
+      return doctor;
     }
 
     public Doctor Update(int id, Doctor doctor)
